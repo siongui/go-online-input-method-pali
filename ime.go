@@ -1,7 +1,8 @@
-package main
+package imepali
 
-import "honnef.co/go/js/dom"
+import "github.com/gopherjs/gopherjs/js"
 
+var paliInputElement *js.Object
 var lastInput string = ""
 
 func checkLastTwoCharacter(lastChar, newChar string) string {
@@ -68,25 +69,22 @@ func checkLastTwoCharacter(lastChar, newChar string) string {
 	return ""
 }
 
-func paliIME(event dom.Event) {
-	elm := event.Target().(*dom.HTMLInputElement)
+func paliIME(event *js.Object) {
+	value := paliInputElement.Get("value").String()
 
-	if lastInput != "" && elm.Value != "" {
-		v := elm.Value
+	if lastInput != "" && value != "" {
+		v := value
 		if len(v) == (len(lastInput) + 1) {
 			result := checkLastTwoCharacter(lastInput[len(lastInput)-1:], v[len(v)-1:])
 			if result != "" {
-				elm.Value = v[:len(v)-2] + result
+				paliInputElement.Set("value", v[:len(v)-2]+result)
 			}
 		}
 	}
-	lastInput = elm.Value
+	lastInput = paliInputElement.Get("value").String()
 }
 
-func main() {
-	d := dom.GetWindow().Document()
-	p := d.GetElementByID("pali").(*dom.HTMLInputElement)
-
-	p.Focus()
-	p.AddEventListener("keyup", false, paliIME)
+func BindPaliInputMethodToInputTextElementById(id string) {
+	paliInputElement = js.Global.Get("document").Call("getElementById", id)
+	paliInputElement.Call("addEventListener", "keyup", paliIME, false)
 }

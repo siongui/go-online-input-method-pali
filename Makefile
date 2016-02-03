@@ -15,6 +15,10 @@ kill:
 	-killall gopherjs
 	ps aux | grep gopherjs
 
+fmt:
+	@go fmt ime.go
+	@go fmt src/pali.go
+
 install:
 	go get -u github.com/gopherjs/gopherjs
 	go get -u honnef.co/go/js/dom
