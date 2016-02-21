@@ -8,7 +8,7 @@ Inspired by `palipad <https://code.google.com/p/palipad/>`_
 Usage
 =====
 
-1. Development environment is ``Ubuntu 15.10`` and ``Go 1.5.2``.
+1. Development environment is ``Ubuntu 15.10`` and ``Go 1.5.2/1.5.3/1.6``.
 
 2. Download and install Go_ and modify **GOROOT** in Makefile.
 
@@ -49,6 +49,12 @@ References
 .. [3] Google Search `golang last character in string <https://www.google.com/search?q=golang+last+character+in+string>`__
 
 .. [4] Google Search `golang double quote in string <https://www.google.com/search?q=golang+double+quote+in+string>`__
+
+.. [5] `GitHub - siongui/dart-online-input-method-pali: Pali (Pāli, Pāḷi) online input method using Dart programming language <https://github.com/siongui/dart-online-input-method-pali>`_
+
+.. [6] Google Search `javascript ime <https://www.google.com/search?q=javascript+ime>`__
+
+.. [7] Google Search `google input tools source code <https://www.google.com/search?q=google+input+tools+source+code>`__
 
 Dart:
 
