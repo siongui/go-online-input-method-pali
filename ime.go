@@ -12,16 +12,25 @@ func checkLastTwoCharacter(lastChar, newChar string) string {
 	if lastChar == "a" && newChar == "a" {
 		return "ā"
 	}
+	if lastChar == "A" && newChar == "a" {
+		return "ā"
+	}
 	if lastChar == "I" && newChar == "I" {
 		return "Ī"
 	}
 	if lastChar == "i" && newChar == "i" {
 		return "ī"
 	}
+	if lastChar == "I" && newChar == "i" {
+		return "ī"
+	}
 	if lastChar == "U" && newChar == "U" {
 		return "Ū"
 	}
 	if lastChar == "u" && newChar == "u" {
+		return "ū"
+	}
+	if lastChar == "U" && newChar == "u" {
 		return "ū"
 	}
 	if lastChar == "\"" && newChar == "N" {
